@@ -62,8 +62,12 @@ textarea{min-height:88px;resize:vertical}
 .chips input:checked+label{background:var(--negro);color:#fff}
 .chips input:checked+label .en{color:#D6D6D6}
 .chips input:focus-visible+label{outline:3px solid var(--naranja);outline-offset:2px}
-.visit{display:none;background:var(--gris);border-radius:14px;padding:14px;margin-bottom:16px}
-.visit.show{display:block}
+.visit,.igbox{display:none;background:var(--gris);border-radius:14px;padding:14px;margin-bottom:16px}
+.visit.show,.igbox.show{display:block}
+.at{position:relative}
+.at span{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-weight:700;font-size:17px;color:var(--suave);pointer-events:none}
+.at input{padding-left:36px}
+.igbox .hint a{color:var(--negro);font-weight:800}
 .stars{display:flex;gap:6px}
 .stars input{position:absolute;opacity:0;pointer-events:none}
 .stars label{flex:1;text-align:center;cursor:pointer;border:2px solid var(--linea);border-radius:10px;padding:8px 0;font-weight:800;font-size:17px;background:#fff}
@@ -153,6 +157,12 @@ footer .muted{color:#BDBDBD;margin-top:8px}
         </div>
       </div>
 
+      <div class="igbox" id="igbox">
+        <label class="l" for="igu">Tu usuario de Instagram <span class="en" lang="en">· Your Instagram username</span> <span class="req">*</span></label>
+        <div class="at"><span aria-hidden="true">@</span><input id="igu" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="100" placeholder="tuusuario"></div>
+        <p class="hint">Para participar desde Instagram, sigue a <a href="https://www.instagram.com/mangolatinogrill/" target="_blank" rel="noopener">@mangolatinogrill</a> y dale like a la publicación del sorteo. Si ganas, lo verificamos.<span class="en" lang="en">To enter from Instagram, follow @mangolatinogrill and like the giveaway post. If you win, we'll check.</span></p>
+      </div>
+
       <div class="visit" id="visit">
         <span class="l">¿Cómo estuvo tu visita hoy? <span class="en" lang="en">· How was your visit today?</span> <span style="font-weight:600;color:var(--suave)">(opcional)</span></span>
         <div class="stars">
@@ -181,6 +191,9 @@ footer .muted{color:#BDBDBD;margin-top:8px}
         <p><b>¿Comiste con nosotros hoy?</b> Una reseña en Google nos ayuda muchísimo. Es opcional y no afecta el sorteo.<span class="en" lang="en">Dined with us today? A Google review helps us a lot. It's optional and doesn't affect the giveaway.</span></p>
         <a class="btn btn-main" href="https://search.google.com/local/writereview?placeid=ChIJVbegKLGk9YgRVCUw1R5xcQU" target="_blank" rel="noopener">★ DEJAR RESEÑA<span class="b-en" lang="en">Leave a Google review</span></a>
       </div>
+      <div class="review" id="igdone">
+        <p style="margin:0"><b>Último paso:</b> si aún no lo hiciste, sigue a @mangolatinogrill y dale like a la publicación del sorteo. Si ganas, lo verificamos.<span class="en" lang="en">Last step: if you haven't yet, follow @mangolatinogrill and like the giveaway post. If you win, we'll check.</span></p>
+      </div>
       <div class="stack">
         <a class="btn btn-dark" href="https://www.instagram.com/mangolatinogrill/" target="_blank" rel="noopener">SÍGUENOS EN INSTAGRAM<span class="b-en" lang="en">Follow @mangolatinogrill</span></a>
         <a class="btn btn-line" href="https://mangolatinogrill.com" target="_blank" rel="noopener">PIDE EN LÍNEA<span class="b-en" lang="en">Order online</span></a>
@@ -200,7 +213,7 @@ footer .muted{color:#BDBDBD;margin-top:8px}
       </li>
       <li><b>Fechas:</b> del 6 de octubre de 2026 al domingo 15 de noviembre de 2026 a las 11:59 PM (hora del Este, Atlanta).
       </li>
-      <li><b>Cómo participar (gratis):</b> escaneando el código QR en el restaurante o desde el enlace en el perfil de Instagram @mangolatinogrill. <b>Una participación por persona.</b> Las participaciones repetidas (mismo teléfono o correo) se eliminan.
+      <li><b>Cómo participar (gratis):</b> escaneando el código QR en el restaurante o desde el enlace en el perfil de Instagram @mangolatinogrill. <b>Si participas desde Instagram, debes seguir a @mangolatinogrill y dar like a la publicación del sorteo.</b> <b>Una participación por persona.</b> Las participaciones repetidas (mismo teléfono o correo) se eliminan.
       </li>
       <li><b>Premios (2 ganadores, uno por premio):</b>
       <ul>
@@ -211,7 +224,7 @@ footer .muted{color:#BDBDBD;margin-top:8px}
       </li>
       <li><b>Sorteo:</b> el lunes 16 de noviembre de 2026, al azar, entre todas las participaciones válidas. Las probabilidades de ganar dependen del número de participaciones válidas.
       </li>
-      <li><b>Aviso a los ganadores:</b> por mensaje de texto y correo el mismo día. Cada ganador tiene <b>48 horas</b> para responder; si no responde, se elige a un suplente al azar.
+      <li><b>Aviso a los ganadores:</b> por mensaje de texto y correo el mismo día. Cada ganador tiene <b>48 horas</b> para responder; si no responde, se elige a un suplente al azar. Si un ganador participó desde Instagram, verificaremos que siga a @mangolatinogrill y haya dado like a la publicación del sorteo; si no cumple, se elige a un suplente al azar.
       </li>
       <li><b>Publicación:</b> solo se publicará el <b>nombre y la inicial del apellido</b> de los ganadores. Nunca su teléfono ni su correo.
       </li>
@@ -233,7 +246,7 @@ footer .muted{color:#BDBDBD;margin-top:8px}
       </li>
       <li><b>Entry period:</b> October 6, 2026 through Sunday, November 15, 2026 at 11:59 PM Eastern Time (Atlanta).
       </li>
-      <li><b>How to enter (free):</b> scan the QR code at the restaurant or use the link in the Instagram profile @mangolatinogrill. <b>Limit one entry per person.</b> Duplicate entries (same phone number or email) will be removed.
+      <li><b>How to enter (free):</b> scan the QR code at the restaurant or use the link in the Instagram profile @mangolatinogrill. <b>If you enter from Instagram, you must follow @mangolatinogrill and like the giveaway post.</b> <b>Limit one entry per person.</b> Duplicate entries (same phone number or email) will be removed.
       </li>
       <li><b>Prizes (2 winners, one per prize):</b>
       <ul>
@@ -244,7 +257,7 @@ footer .muted{color:#BDBDBD;margin-top:8px}
       </li>
       <li><b>Drawing:</b> Monday, November 16, 2026, at random, from all eligible entries. Odds of winning depend on the number of eligible entries received.
       </li>
-      <li><b>Winner notification:</b> by text message and email on the same day. Each winner has <b>48 hours</b> to respond; otherwise an alternate winner will be drawn at random.
+      <li><b>Winner notification:</b> by text message and email on the same day. Each winner has <b>48 hours</b> to respond; otherwise an alternate winner will be drawn at random. If a winner entered from Instagram, we will verify that they follow @mangolatinogrill and liked the giveaway post; if not, an alternate winner will be drawn at random.
       </li>
       <li><b>Publicity:</b> only the winners' <b>first name and last initial</b> will be published. Never their phone number or email.
       </li>
@@ -280,6 +293,7 @@ footer .muted{color:#BDBDBD;margin-top:8px}
       "celular": "entry.1618720513",
       "email": "entry.1914887102",
       "origen": "entry.463660983",
+      "instagram": "entry.868065348",
       "calificacion": "entry.1776955166",
       "comentario": "entry.2122424415",
       "elegibilidad": "entry.1307168346",
@@ -296,13 +310,15 @@ footer .muted{color:#BDBDBD;margin-top:8px}
   var E = C.entries, SRC = C.origen;
   var $ = function (id) { return document.getElementById(id); };
   document.querySelectorAll('a[href="#reglas"]').forEach(function (a) { a.addEventListener("click", function () { $("reglas").open = true; }); });
-  var form = $("f"), err = $("err"), done = $("done"), visit = $("visit"), review = $("review");
+  var form = $("f"), err = $("err"), done = $("done"), visit = $("visit"), review = $("review"), igbox = $("igbox");
 
   function store(get, v) { try { return get ? localStorage.getItem(C.key) : localStorage.setItem(C.key, v); } catch (e) { return null; } }
   function selected(name) { var el = document.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : ""; }
-  function showDone(comio, again) {
+  // src: "qr" (comió en el local → reseña) · "ig" (recordatorio de seguir + like) · "otro"
+  function showDone(src, again) {
     form.style.display = "none"; $("intro").style.display = "none"; done.classList.add("show");
-    review.classList.toggle("show", !!comio);
+    review.classList.toggle("show", src === "qr");
+    $("igdone").classList.toggle("show", src === "ig");
     if (again) $("doneMsg").innerHTML = 'Ya participaste desde este dispositivo. Elegimos a los ganadores el <b>16 de noviembre</b>.<span class="en" lang="en">You\'re already entered from this device. Winners will be drawn on November 16.</span>';
     done.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -316,13 +332,14 @@ footer .muted{color:#BDBDBD;margin-top:8px}
   var s = (p.get("src") || "").toLowerCase();
   if (s === "qr" || s === "mesa") $("s1").checked = true;
   if (s === "ig" || s === "instagram") $("s2").checked = true;
-  function syncVisit() { visit.classList.toggle("show", selected("src") === "qr"); }
-  document.querySelectorAll('input[name="src"]').forEach(function (r) { r.addEventListener("change", syncVisit); });
-  syncVisit();
+  // La visita se pide solo a quien está en el local; el @ de Instagram, solo a quien entra desde Instagram
+  function syncSrc() { var v = selected("src"); visit.classList.toggle("show", v === "qr"); igbox.classList.toggle("show", v === "ig"); }
+  document.querySelectorAll('input[name="src"]').forEach(function (r) { r.addEventListener("change", syncSrc); });
+  syncSrc();
 
   // Freno suave de duplicados (la limpieza real es antes del sorteo)
-  if (p.get("preview") === "gracias") { showDone(true); return; }
-  var prev = store(true); if (prev) { showDone(prev === "qr", true); return; }
+  if (p.get("preview") === "gracias") { showDone(selected("src") || "qr"); return; }
+  var prev = store(true); if (prev) { showDone(prev, true); return; }
 
   form.addEventListener("submit", function (ev) {
     ev.preventDefault(); err.classList.remove("show");
@@ -332,10 +349,20 @@ footer .muted{color:#BDBDBD;margin-top:8px}
     if (digits.length < 10 || digits.length > 11) return fail("Escribe un celular válido (10 dígitos).", "Please enter a valid mobile number (10 digits).");
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail("Escribe un correo válido.", "Please enter a valid email.");
     if (!src) return fail("Dinos desde dónde participas.", "Please tell us where you're entering from.");
+    var ig = "";
+    if (src === "ig") {
+      // Acepta "usuario", "@usuario" o el enlace del perfil pegado; se guarda como @usuario en minúsculas
+      ig = $("igu").value.trim().toLowerCase();
+      var m = ig.match(/instagram\.com\/([^\/?#\s]+)/); if (m) ig = m[1];
+      ig = ig.replace(/^@+/, "").trim();
+      if (!/^[a-z0-9._]{1,30}$/.test(ig)) return fail("Escribe tu usuario de Instagram, sin espacios (ejemplo: @maria.perez).", "Please enter your Instagram username, no spaces (e.g. @maria.perez).");
+      if (ig === "mangolatinogrill") return fail("Escribe tu propio usuario de Instagram, no el de Mango.", "Please enter your own Instagram username, not Mango's.");
+    }
     if (!$("elig").checked) return fail("Confirma que tienes 18 años o más, vives en Georgia y aceptas las reglas.", "Please confirm you're 18+, live in Georgia, and accept the rules.");
 
     var body = new URLSearchParams();
     body.append(E.nombre, name); body.append(E.celular, phone); body.append(E.email, email); body.append(E.origen, SRC[src]);
+    if (src === "ig") body.append(E.instagram, "@" + ig);
     if (src === "qr") {
       var rate = selected("rate"), comment = $("comment").value.trim();
       if (rate) body.append(E.calificacion, rate);
@@ -347,7 +374,7 @@ footer .muted{color:#BDBDBD;margin-top:8px}
 
     var btn = $("go"); btn.disabled = true; btn.innerHTML = 'ENVIANDO…<span class="b-en" lang="en">Sending…</span>';
     fetch(C.formResponse, { method: "POST", mode: "no-cors", body: body })
-      .then(function () { store(false, src); showDone(src === "qr"); })
+      .then(function () { store(false, src); showDone(src); })
       .catch(function () {
         btn.disabled = false; btn.innerHTML = 'PARTICIPAR<span class="b-en" lang="en">Enter the giveaway</span>';
         fail('No pudimos enviar tu participación. Revisa tu conexión e inténtalo de nuevo, o <a href="' + C.fallback + '" target="_blank" rel="noopener">participa aquí</a>.',
