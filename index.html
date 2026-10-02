@@ -213,7 +213,7 @@ footer .muted{color:#BDBDBD;margin-top:8px}
       </li>
       <li><b>Fechas:</b> del 1 de octubre de 2026 al domingo 15 de noviembre de 2026 a las 11:59 PM (hora del Este, Atlanta).
       </li>
-      <li><b>Cómo participar (gratis):</b> escaneando el código QR en el restaurante o desde el enlace en el perfil de Instagram @mangolatinogrill. <b>Si participas desde Instagram, debes seguir a @mangolatinogrill y dar like a la publicación del sorteo.</b> <b>Una participación por persona.</b> Las participaciones repetidas (mismo teléfono o correo) se eliminan.
+      <li><b>Cómo participar (gratis):</b> escaneando el código QR en el restaurante o desde el enlace en nuestro perfil de Instagram (@mangolatinogrill) o de TikTok. <b>Si participas desde Instagram, debes seguir a @mangolatinogrill y dar like a la publicación del sorteo.</b> <b>Una participación por persona.</b> Las participaciones repetidas (mismo teléfono o correo) se eliminan.
       </li>
       <li><b>Premios (2 ganadores, uno por premio):</b>
       <ul>
@@ -232,7 +232,7 @@ footer .muted{color:#BDBDBD;margin-top:8px}
       </li>
       <li><b>Reseñas:</b> participar <b>no</b> requiere dejar una reseña, y las reseñas no influyen en el resultado.
       </li>
-      <li>Este sorteo <b>no está patrocinado, avalado ni administrado</b> por Instagram, Facebook, Meta ni Google. Nulo donde esté prohibido.
+      <li>Este sorteo <b>no está patrocinado, avalado ni administrado</b> por Instagram, Facebook, Meta, TikTok ni Google. Nulo donde esté prohibido.
       </li>
       <li>Si hay diferencias entre la versión en español y en inglés, prevalece la versión en inglés.
       </li></ol>
@@ -246,7 +246,7 @@ footer .muted{color:#BDBDBD;margin-top:8px}
       </li>
       <li><b>Entry period:</b> October 1, 2026 through Sunday, November 15, 2026 at 11:59 PM Eastern Time (Atlanta).
       </li>
-      <li><b>How to enter (free):</b> scan the QR code at the restaurant or use the link in the Instagram profile @mangolatinogrill. <b>If you enter from Instagram, you must follow @mangolatinogrill and like the giveaway post.</b> <b>Limit one entry per person.</b> Duplicate entries (same phone number or email) will be removed.
+      <li><b>How to enter (free):</b> scan the QR code at the restaurant or use the link in our Instagram (@mangolatinogrill) or TikTok profile. <b>If you enter from Instagram, you must follow @mangolatinogrill and like the giveaway post.</b> <b>Limit one entry per person.</b> Duplicate entries (same phone number or email) will be removed.
       </li>
       <li><b>Prizes (2 winners, one per prize):</b>
       <ul>
@@ -265,7 +265,7 @@ footer .muted{color:#BDBDBD;margin-top:8px}
       </li>
       <li><b>Reviews:</b> entering does <b>not</b> require leaving a review, and reviews have no effect on the outcome.
       </li>
-      <li>This giveaway is <b>not sponsored, endorsed or administered by</b> Instagram, Facebook, Meta or Google. Void where prohibited.
+      <li>This giveaway is <b>not sponsored, endorsed or administered by</b> Instagram, Facebook, Meta, TikTok or Google. Void where prohibited.
       </li>
       <li>In case of any discrepancy between the Spanish and English versions, the English version prevails.
       </li></ol>
@@ -328,10 +328,11 @@ footer .muted{color:#BDBDBD;margin-top:8px}
   // Cierre automático: domingo 15-nov-2026, 11:59:59 PM hora de Atlanta (EST)
   if (Date.now() > Date.parse(C.cierreUTC) || p.get("preview") === "cerrado") { form.style.display = "none"; $("intro").style.display = "none"; $("closed").classList.add("show"); return; }
 
-  // ?src=qr (mesas) o ?src=ig (bio e historia) preseleccionan el origen para medir cada canal
+  // ?src=qr (mesas), ?src=ig (bio e historia) o ?src=tt (bio de TikTok → «Otro») preseleccionan el origen
   var s = (p.get("src") || "").toLowerCase();
   if (s === "qr" || s === "mesa") $("s1").checked = true;
   if (s === "ig" || s === "instagram") $("s2").checked = true;
+  if (s === "tt" || s === "tiktok" || s === "otro") $("s3").checked = true;
   // La visita se pide solo a quien está en el local; el @ de Instagram, solo a quien entra desde Instagram
   function syncSrc() { var v = selected("src"); visit.classList.toggle("show", v === "qr"); igbox.classList.toggle("show", v === "ig"); }
   document.querySelectorAll('input[name="src"]').forEach(function (r) { r.addEventListener("change", syncSrc); });
